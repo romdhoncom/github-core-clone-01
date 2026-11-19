@@ -1,3 +1,8 @@
+// Entrypoint of the github-core-clone-01 forge: a GitHub-compatible git forge in one
+// Node process. This file is only the env lifecycle — bind an ephemeral port (0), POST it
+// to $MAKEFUN_ENV_URL/register, poll GET /done until {"done": true}, then exit 0. That
+// lifecycle is the harness's, not the contest's; the forge itself lives in app.ts.
+//
 // The entry <-> env lifecycle, as env/src/wire.ts settles it: bind an ephemeral port, tell the env the
 // port it bound, then poll until the env says the trial is over and exit 0. Keep this file as it is:
 // the suite scores the server app.ts builds, and the lifecycle is the harness's, not the contest's.
